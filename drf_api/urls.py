@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token
 from todo.views import TodoViewSet
 
 # The DefaultRouter, which automatically generates URL patterns for your viewsets.It’s a shortcut to avoid manually writing all the CRUD paths.
@@ -26,5 +27,6 @@ router.register(r"todo", TodoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api-token-auth/", obtain_auth_token),
     path("api/", include(router.urls)),
 ]

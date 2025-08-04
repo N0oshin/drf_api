@@ -23,7 +23,7 @@ from todo.views import TodoViewSet
 
 # The DefaultRouter, which automatically generates URL patterns for your viewsets.It’s a shortcut to avoid manually writing all the CRUD paths.
 router = DefaultRouter()
-router.register(r"todo", TodoViewSet)
+router.register(r"todo", TodoViewSet, basename="todo")
 
 urlpatterns = [
     path("admin/", admin.site.urls),

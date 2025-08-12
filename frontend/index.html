@@ -6,17 +6,21 @@
     <meta charset="UTF-8">
     <title>Todo App</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 
 <body>
     <h1>My Todos</h1>
-    <ul id="todo-list"></ul>
+    <ul id="todo-list" class="todo-list"></ul>
 
     <h3>Add Todo</h3>
-    <input type="text" id="todo-title" placeholder="Enter todo title">
-    <button onclick="createTodo()">Add</button>
+    <input type="text" id="todo-title" class="todo-input" placeholder="Add new task">
+    <button id="add-todo" class="btn btn-add">Add Todo</button>
 
     <script src="app.js"></script>
 </body>
 
 </html>
+
+
+

@@ -12,15 +12,19 @@ function fetchTodos() {
     const todos = response.data;
     const list = document.getElementById('todo-list');
     list.innerHTML = '';
+
     todos.forEach(todo => {
       const item = document.createElement('li');
+      item.className = 'todo-item';
       item.textContent = `${todo.title} - ${todo.completed ? '✅' : '❌'}`;
       //toggle button for task completion
       const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'btn btn-toggle';
       toggleBtn.textContent = 'change status';
       toggleBtn.onclick = () => toggleTodo(todo.id, !todo.completed);
       //delete btn
       const deleteBtn = document.createElement('button');
+      deleteBtn.className ='btn btn-delete'
       deleteBtn.textContent = 'Delete';
       deleteBtn.onclick = () =>deleteTodo(todo.id);
 
@@ -66,6 +70,9 @@ function deleteTodo(id){
   .then(() => fetchTodos())
   .catch(error => console.error('error deleting a todo:', error));
 }
+
+//Add Event Listener for Add Button
+document.getElementById('add-todo').addEventListener('click', createTodo);
 
 //  Initial load
 fetchTodos();

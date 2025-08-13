@@ -20,7 +20,7 @@ function fetchTodos() {
       //toggle button for task completion
       const toggleBtn = document.createElement('button');
       toggleBtn.className = 'btn btn-toggle';
-      toggleBtn.textContent = 'change status';
+      toggleBtn.textContent = 'update';
       toggleBtn.onclick = () => toggleTodo(todo.id, !todo.completed);
       //delete btn
       const deleteBtn = document.createElement('button');

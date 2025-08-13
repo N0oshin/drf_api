@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdf6e3;
+    color: #333;
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1.1px;
+}
+
+/* Subheading */
+h3 {
+    margin-top: 40px;
+    margin-bottom: 12px;
+    color: #6b4226;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1.5px solid #deb992;
+    padding-bottom: 6px;
+}
+
+/* Todo list styling */
+.todo-list {
+    padding-left: 0;
+    margin: 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(107, 66, 38, 0.15);
+    background-color: #fff8dc;
+}
+
+/* Each todo item */
+.todo-item {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #deb992;
+    font-size: 16px;
+}
+/* Remove last border from last item */
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* Ensure buttons have consistent padding and appearance */
+.todo-item button {
+    padding: 5px 9px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(107, 66, 38, 0.2);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Add todo button */
+.btn-add {
+    background-color: #6b4226;
+    color: #fdf6e3;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.25s ease;
+}
+
+.btn-add:hover {
+    background-color: #deb992;
+    color: #4a4438;
+}
+
+/* Toggle button style */
+.btn-toggle {
+    background-color: #deb992;
+    color: #6b4226;
+}
+
+.btn-toggle:hover {
+    background-color: #c19a64;
+    color: #fff8dc;
+}
+
+.btn-delete {
+    background-color: #b25042;
+    color: #fdf6e3;
+}
+
+.btn-delete:hover {
+    background-color: #8e3d32;
+}
+
+/* Input box styling */
+.todo-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 2px solid #deb992;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    transition: border-color 0.25s ease;
+}
+
+.todo-input::placeholder {
+    color: #b5a373;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

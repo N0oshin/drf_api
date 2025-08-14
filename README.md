@@ -41,7 +41,12 @@ This project demonstrates:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/46eb1d7f-ed82-4f44-98bb-26d7dba52441" />
+
+---
+
+<img width="1912" height="1003" alt="image" src="https://github.com/user-attachments/assets/852a3cb0-2625-4fd9-94d0-9c83180ef867" />
 
 

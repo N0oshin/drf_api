@@ -8,7 +8,50 @@ body {
     box-sizing: border-box;
 }
 
-/* Main heading */
+.login-form {
+    background-color: #fff8dc;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-form h2 {
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+.login-form input {
+    padding: 0.75rem;
+    border: 1px solid #efdf9b;
+    border-radius: 6px;
+}
+
+.login-form input:focus {
+    border-color:#c8a302;  
+}
+
+.login-form button {
+    padding: 0.75rem;
+    background-color:#6b4226;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #deb992;
+    color: #4a4438;
+}
+
+
 h1 {
     text-align: center;
     font-weight: 700;
@@ -79,7 +122,6 @@ h3 {
     color: #4a4438;
 }
 
-/* Toggle button style */
 .btn-toggle {
     background-color: #deb992;
     color: #6b4226;
@@ -99,7 +141,6 @@ h3 {
     background-color: #8e3d32;
 }
 
-/* Input box styling */
 .todo-input {
     width: 100%;
     box-sizing: border-box;
@@ -108,12 +149,10 @@ h3 {
     border-radius: 8px;
     font-size: 16px;
     margin-bottom: 12px;
-    transition: border-color 0.25s ease;
 }
 
 .todo-input::placeholder {
     color: #b5a373;
-    font-style: italic;
 }
 
 

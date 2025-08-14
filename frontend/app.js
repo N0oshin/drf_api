@@ -1,83 +1,3 @@
-// const token = 'eefed2ca37d41b11dce0b8c04bfcde43262cf09f';  
-// const apiUrl = 'http://localhost:8000/api/todo/';
-
-// // Fetch and display todos
-// function fetchTodos() {
-//   axios.get(apiUrl, {
-//     headers: {
-//       Authorization: `Token ${token}`
-//     }
-//   })
-//   .then(response => {
-//     const todos = response.data;
-//     const list = document.getElementById('todo-list');
-//     list.innerHTML = '';
-
-//     todos.forEach(todo => {
-//       const item = document.createElement('li');
-//       item.className = 'todo-item';
-//       item.textContent = `${todo.title} - ${todo.completed ? '✅' : '❌'}`;
-//       //toggle button for task completion
-//       const toggleBtn = document.createElement('button');
-//       toggleBtn.className = 'btn btn-toggle';
-//       toggleBtn.textContent = 'update';
-//       toggleBtn.onclick = () => toggleTodo(todo.id, !todo.completed);
-//       //delete btn
-//       const deleteBtn = document.createElement('button');
-//       deleteBtn.className ='btn btn-delete'
-//       deleteBtn.textContent = 'Delete';
-//       deleteBtn.onclick = () =>deleteTodo(todo.id);
-
-//       item.appendChild(toggleBtn);
-//       item.appendChild(deleteBtn);
-//       list.appendChild(item);
-//     });
-//   })
-//   .catch(error => {
-//     console.error('Error fetching todos:', error);
-//   });
-// }
-
-// // Create a new todo
-// function createTodo() {
-//   const title = document.getElementById('todo-title').value;
-//   axios.post(apiUrl, { title, completed: false }, {
-//     headers: {
-//       Authorization: `Token ${token}`
-//     }
-//   })
-//   .then(() => {
-//     document.getElementById('todo-title').value = '';
-//     fetchTodos();  // Refresh list
-//   })
-//   .catch(error => {
-//     console.error('Error creating todo:', error);
-//   });
-// }
-
-// function toggleTodo(id, newStatus){
-//   axios.patch(`${apiUrl}${id}/`, {completed : newStatus},{
-//     headers : {Authorization :`Token ${token}`}
-//   })
-//   .then(()=> fetchTodos())
-//   .catch(error => console.error('Error updating todo:', error.response || error));
-// }
-
-// function deleteTodo(id){
-//   axios.delete(`${apiUrl}${id}/`,{
-//     headers : {Authorization :`Token ${token}`}
-//   })
-//   .then(() => fetchTodos())
-//   .catch(error => console.error('error deleting a todo:', error));
-// }
-
-// //Add Event Listener for Add Button
-// document.getElementById('add-todo').addEventListener('click', createTodo);
-
-// //  Initial load
-// fetchTodos();
-
-
 const apiUrl = 'http://localhost:8000/api/todo/';
 const authUrl = 'http://localhost:8000/api-token-auth/';
 
@@ -94,7 +14,7 @@ function clearToken() {
   localStorage.removeItem('token');
 }
 
-// 🔄 UI Update
+// UI Update
 function updateUI() {
   const isLoggedIn = !!getToken();
 
@@ -105,7 +25,7 @@ function updateUI() {
 }
 
 
-// 🔐 Login and Fetch Todos
+// Login and Fetch Todos
 function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
@@ -125,7 +45,7 @@ function login() {
     });
 }
 
-// 📥 Fetch Todos
+// Fetch Todos
 function fetchTodos() {
   const token = getToken();
   if (!token) return;
@@ -143,13 +63,13 @@ function fetchTodos() {
       item.className = 'todo-item';
       item.textContent = `${todo.title} - ${todo.completed ? '✅' : '❌'}`;
 
-      // 🔄 Update Button
+      //  Update Button
       const toggleBtn = document.createElement('button');
       toggleBtn.className = 'btn btn-toggle';
       toggleBtn.textContent = 'Update';
       toggleBtn.onclick = () => toggleTodo(todo.id, !todo.completed);
 
-      // ❌ Delete Button
+      //  Delete Button
       const deleteBtn = document.createElement('button');
       deleteBtn.className = 'btn btn-delete';
       deleteBtn.textContent = 'Delete';
@@ -165,7 +85,7 @@ function fetchTodos() {
   });
 }
 
-// ➕ Create Todo
+// Create Todo
 function createTodo() {
   const token = getToken();
   const title = document.getElementById('todo-title').value;
@@ -184,7 +104,7 @@ function createTodo() {
   });
 }
 
-// 🔄 Toggle Todo Status
+//  update Todo Status
 function toggleTodo(id, newStatus) {
   const token = getToken();
   axios.patch(`${apiUrl}${id}/`, { completed: newStatus }, {
@@ -196,7 +116,7 @@ function toggleTodo(id, newStatus) {
   });
 }
 
-// ❌ Delete Todo
+// Delete Todo
 function deleteTodo(id) {
   const token = getToken();
   axios.delete(`${apiUrl}${id}/`, {
@@ -208,11 +128,11 @@ function deleteTodo(id) {
   });
 }
 
-// ➕ Add Todo Button Listener
+//  Add Todo Button Listener
 document.getElementById('add-todo').addEventListener('click', createTodo);
 
 
-// 🚀 Initial Load
+//  Initial Load
 window.onload = () => {
   updateUI();
   if (getToken()) {
